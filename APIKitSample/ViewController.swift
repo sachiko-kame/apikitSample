@@ -13,7 +13,7 @@ struct RateLimitRequest: Request {
     typealias Response = RateLimit
     
     var baseURL: URL {
-        return URL(string: "https://api.github.com/rate_limit")!
+        return URL(string: "https://api.github.com")!
     }
     
     var method: HTTPMethod {
@@ -21,7 +21,7 @@ struct RateLimitRequest: Request {
     }
     
     var path: String {
-        return ""
+        return "/rate_limit"
     }
     
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> RateLimit {
