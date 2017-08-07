@@ -49,6 +49,8 @@ struct RateLimit {
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textsample1: UITextField!
+    @IBOutlet weak var textsample2: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +63,9 @@ class ViewController: UIViewController {
                 // which is also known as `RateLimitRequest.Response`.
                 print("limit: \(rateLimit.limit)")
                 print("remaining: \(rateLimit.remaining)")
+                
+                self.textsample1.text = "limit: \(rateLimit.limit)"
+                self.textsample2.text = "remaining: \(rateLimit.remaining)"
                 
             case .failure(let error):
                 print("error: \(error)")
